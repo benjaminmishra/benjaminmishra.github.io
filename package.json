@@ -1,0 +1,26 @@
+{
+  "name": "benjaminmishra.github.io",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "repository": "git@github.com:benjaminmishra/benjaminmishra.github.io.git",
+  "author": "Benjamin Mishra",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^14.0.23",
+    "@types/react": "^16.9.43",
+    "husky": "^4.2.5",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tslint": "^6.1.2"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
+}
