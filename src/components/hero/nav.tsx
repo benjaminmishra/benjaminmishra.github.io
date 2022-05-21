@@ -1,5 +1,5 @@
-import { Popover, Transition } from "@headlessui/react"
-import React, { Fragment } from "react"
+import { Popover } from "@headlessui/react"
+import React from "react"
 import { MenuIcon } from '@heroicons/react/outline'
 
 
@@ -16,7 +16,6 @@ export default function Nav() {
                 <nav className="relative flex items-center justify-between sm:h-10 lg:justify-middle" aria-label="Global">
                     <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                         <div className="flex items-center justify-between w-full md:w-auto">
-
                             <a href="#">
                                 <span className="sr-only">Workflow</span>
                                 <img
