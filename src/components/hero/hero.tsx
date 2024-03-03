@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Nav from './nav';
 
 export default function Hero() {
   return (
