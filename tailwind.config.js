@@ -1,4 +1,4 @@
-export const purge = ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"];
+export const content = ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"];
 export const media = true;
 export const theme = {
   extend: {},
