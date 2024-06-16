@@ -11,7 +11,7 @@ export default function Footer() {
           </span>
           <div className="mt-4 flex space-x-5 sm:justify-center md:mt-0 rtl:space-x-reverse">
             <a
-              href="#"
+              href="https://www.facebook.com#"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="sr-only">Facebook page</span>
             </a>
             <a
-              href="#"
+              href="https://www,discord.com"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -45,7 +45,7 @@ export default function Footer() {
               <span className="sr-only">Discord community</span>
             </a>
             <a
-              href="#"
+              href="https://www.twitter.com/benjaminmishra"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -64,7 +64,7 @@ export default function Footer() {
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="#"
+              href="https://www.github.com/benjaminmishra"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -83,7 +83,7 @@ export default function Footer() {
               <span className="sr-only">GitHub account</span>
             </a>
             <a
-              href="#"
+              href="https://www.dribble.com"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
