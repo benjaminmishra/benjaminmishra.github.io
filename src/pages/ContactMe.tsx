@@ -1,12 +1,10 @@
 import React from "react";
 import "../App.css";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Layout from "./Layout";
 
 export default function ContactMe() {
   return (
-    <>
-    <Header/>
+    <Layout>
     <div>
       <section className="body-font relative text-gray-700 font-FigTree">
         <div className="container mx-auto px-5 py-24">
@@ -153,7 +151,6 @@ export default function ContactMe() {
         </div>
       </section>
     </div>
-    <Footer/>
-    </>
+    </Layout>
   );
 }

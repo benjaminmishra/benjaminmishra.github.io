@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8 inline-block align-middle">
       <nav
         className="lg:justify-middle relative flex items-center justify-between sm:h-10 font-FigTree"
         aria-label="Global"

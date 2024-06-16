@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import Experience from "../components/expereince";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Layout from "./Layout";
 
 export default function WorkExperience() {
 
@@ -35,12 +34,10 @@ export default function WorkExperience() {
 
 
   return (
-    <>
-      <Header />
+    <Layout>
       <div ref={workExDivRef}>
         {expereinces.sort().map(e => <Experience sequence={e} />)}
       </div>
-      <Footer />
-    </>
+    </Layout>
   )
 }

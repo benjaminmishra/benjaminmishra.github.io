@@ -1,14 +1,13 @@
 import React from "react";
-import Footer from "../components/footer";
-import Header from "../components/header";
 import Hero from "../components/hero";
+import Layout from "./Layout";
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Layout>
       <Hero />
-      <Footer />
+      </Layout>
     </div>
   );
 }

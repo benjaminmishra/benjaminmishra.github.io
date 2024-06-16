@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import Layout from "./Layout";
 
 export default function NotFound() {
   return (
+    <Layout>
     <div className="flex h-screen flex-col items-center justify-center bg-gray-50 font-FigTree">
       <h1 className="mb-4 text-4xl font-bold">404 - Not Found</h1>
       <p className="text-gray-600">
@@ -25,5 +27,6 @@ export default function NotFound() {
         <Link to="/contact">Contact Me</Link>
       </div>
     </div>
+    </Layout>
   );
 }
