@@ -1,18 +1,20 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import Experience from "../components/expereince";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 export default function WorkExperience() {
 
-  const expereinces: number[] = useMemo(()=>[1, 2, 3, 4, 5, 6],[]);
+  const expereinces: number[] = useMemo(() => [1, 2, 3, 4, 5, 6], []);
 
   const workExDivRef = useRef<HTMLDivElement>(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     const expContainer = workExDivRef.current;
 
-    const handleDragStart = (event : DragEvent) => {
+    const handleDragStart = (event: DragEvent) => {
       event.preventDefault();
-      
+
       const draggedItem = event.target as HTMLDivElement;
       const draggedItemId = draggedItem.id;
 
@@ -28,13 +30,17 @@ export default function WorkExperience() {
 
 
 
-  },[expereinces]);
-  
+  }, [expereinces]);
+
 
 
   return (
-    <div ref={workExDivRef}>
-      {expereinces.sort().map(e => <Experience sequence={e} />)}
-    </div>
+    <>
+      <Header />
+      <div ref={workExDivRef}>
+        {expereinces.sort().map(e => <Experience sequence={e} />)}
+      </div>
+      <Footer />
+    </>
   )
 }

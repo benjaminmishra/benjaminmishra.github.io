@@ -16,6 +16,7 @@ export default function ArticlePreview({ ArticleId }: ArticleProps) {
 
     const handleOnClick = () => {
         alert(`Navigating away to blog post ${ArticleId}`);
+        window.location.href = `/Article/${ArticleId}`;
     }
 
     return (
