@@ -4,7 +4,7 @@ import "../App.css";
 
 export default function NotFound() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-gray-50">
+    <div className="flex h-screen flex-col items-center justify-center bg-gray-50 font-FigTree">
       <h1 className="mb-4 text-4xl font-bold">404 - Not Found</h1>
       <p className="text-gray-600">
         Sorry, the page you're looking for doesn't exist.
