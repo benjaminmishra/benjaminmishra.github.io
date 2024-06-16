@@ -1,7 +1,5 @@
 import React from "react"
 import illustration from "../assets/illustration-article.svg";
-import avatar from "../assets/image-avatar.webp";
-import { addListener } from "process";
 
 interface ArticleProps {
     ArticleId: number
