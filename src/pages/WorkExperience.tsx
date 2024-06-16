@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import Experience from "../components/expereince";
 
 export default function WorkExperience() {
 
-  const expereinces: number[] = [1, 2, 3, 4, 5, 6];
+  const expereinces: number[] = useMemo(()=>[1, 2, 3, 4, 5, 6],[]);
 
   const workExDivRef = useRef<HTMLDivElement>(null);
 
