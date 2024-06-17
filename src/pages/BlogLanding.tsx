@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlePreview from "../components/article-preview";
+import ArticlePreview from "../components/ArticlePreview";
 import BlogLandigHeader from "../components/blog-landing-header";
 import Layout from "./Layout";
 

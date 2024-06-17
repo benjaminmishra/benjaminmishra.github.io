@@ -22,7 +22,5 @@
     "outDir": "./build",
     "rootDir": "./"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src","test", "src/__tests__/App.test.tsx", "src/setupTests.ts"]
 }

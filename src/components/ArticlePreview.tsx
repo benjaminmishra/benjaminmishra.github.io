@@ -37,5 +37,5 @@ export default function ArticlePreview({ ArticleId }: ArticleProps) {
                 </p>
             </div>
         </div>
-    )
+    );
 }

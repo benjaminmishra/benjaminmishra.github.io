@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/nav";
+import Nav from "./nav";
 import Logo from "./logo";
 import Banner from "./banner";
 
