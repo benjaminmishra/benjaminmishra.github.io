@@ -11,7 +11,6 @@ export default function Header() {
         <Logo />
         <Nav />
       </div>
-
     </>
   );
 }
