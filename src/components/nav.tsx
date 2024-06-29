@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Nav() {
+export default function Nav(): JSX.Element {
   return (
     <div className="px-4 sm:px-6 lg:px-8 inline-block align-middle">
       <nav

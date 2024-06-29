@@ -1,11 +1,14 @@
 import React from "react"
 import illustration from "../assets/illustration-article.svg";
+import { useNavigate } from "react-router-dom";
 
 interface ArticleProps {
     ArticleId: number
 }
 
 export default function ArticlePreview({ ArticleId }: ArticleProps) {
+
+    const navigate = useNavigate();
 
     const Article = {
         illustration: illustration,
@@ -16,7 +19,7 @@ export default function ArticlePreview({ ArticleId }: ArticleProps) {
 
     const handleOnClick = () => {
         alert(`Navigating away to blog post ${ArticleId}`);
-        window.location.href = `/Article/${ArticleId}`;
+        navigate(`/Article/${ArticleId}`);
     }
 
     return (

@@ -7,6 +7,6 @@ test("Navigation Bar contains three links",()=>{
         <Nav/>
     );
 
-    const links = screen.getAllByRole("a");
-    links.forEach(x=>expect(x).toBeDefined());
+    const homeLink = screen.getByText("Work Experience");
+    expect(homeLink).toBeInTheDocument();
 });
