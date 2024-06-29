@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Nav from "../components/nav";
+import Nav from "../components/Nav";
 import React from "react";
 
 test("Navigation Bar contains three links",()=>{
