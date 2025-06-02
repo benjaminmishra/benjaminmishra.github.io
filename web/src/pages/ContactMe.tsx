@@ -6,10 +6,10 @@ export default function ContactMe() {
   return (
     <Layout>
     <div>
-      <section className="body-font relative text-black font-FigTree">
+      <section className="body-font relative text-text-light dark:text-text-dark font-FigTree">
         <div className="container mx-auto px-5 py-24">
           <div className="mb-12 flex w-full flex-col text-center">
-            <h1 className="title-font mb-4 text-2xl font-medium text-black sm:text-3xl">
+            <h1 className="title-font mb-4 text-2xl font-medium text-text-light dark:text-text-dark sm:text-3xl">
               Contact Me
             </h1>
             <p className="mx-auto text-base leading-relaxed lg:w-2/3 font-FigTree">
@@ -21,14 +21,14 @@ export default function ContactMe() {
             <div className="-m-2 flex flex-wrap">
               <div className="w-1/2 p-2">
                 <div className="relative">
-                  <label htmlFor="name" className="text-sm leading-7 text-black">
+                  <label htmlFor="name" className="text-sm leading-7 text-text-light dark:text-text-dark">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-8 text-black outline-none transition-colors duration-200 ease-in-out focus:border-black"
+                    className="w-full rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-8 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
                   />
                 </div>
               </div>
@@ -36,7 +36,7 @@ export default function ContactMe() {
                 <div className="relative">
                   <label
                     htmlFor="email"
-                    className="text-sm leading-7 text-black"
+                    className="text-sm leading-7 text-text-light dark:text-text-dark"
                   >
                     Email
                   </label>
@@ -44,7 +44,7 @@ export default function ContactMe() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-8 text-black outline-none transition-colors duration-200 ease-in-out focus:border-black"
+                    className="w-full rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-8 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
                   />
                 </div>
               </div>
@@ -52,39 +52,39 @@ export default function ContactMe() {
                 <div className="relative">
                   <label
                     htmlFor="message"
-                    className="text-sm leading-7 text-black"
+                    className="text-sm leading-7 text-text-light dark:text-text-dark"
                   >
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    className="h-32 w-full resize-none rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-6 text-black outline-none transition-colors duration-200 ease-in-out focus:border-black"
+                    className="h-32 w-full resize-none rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-6 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
                   ></textarea>
                 </div>
               </div>
               <div className="w-full p-2">
                 <button
-                  className="bg-grey-600 mx-auto flex rounded border px-8 py-2 text-lg text-white hover:bg-indigo-600 focus:outline-1"
+                  className="mx-auto flex rounded border border-primary bg-primary px-8 py-2 text-lg text-white hover:bg-primary/90 dark:hover:bg-primary/80 focus:outline-1 transition-colors duration-200"
                   onClick={() => alert("You clicked a button")}
                 >
                   Submit
                 </button>
               </div>
-              <div className="mt-8 w-full border-t border-gray-200 p-2 pt-8 text-center">
+              <div className="mt-8 w-full border-t border-gray-200 dark:border-gray-700 p-2 pt-8 text-center">
                 <a
-                  className="text-indigo-500"
+                  className="text-primary hover:text-primary/90 dark:hover:text-primary/80"
                   href="mailto:benjaminmishra@gmail.com"
                 >
                   benjaminmishra@gmail.com
                 </a>
-                <p className="my-5 leading-normal">
+                <p className="my-5 leading-normal text-text-light dark:text-text-dark">
                   49 Smith St.
                   <br />
                   Saint Cloud, MN 56301
                 </p>
                 <span className="inline-flex">
-                  <a href="https://www.facebook.com" className="text-gray-500">
+                  <a href="https://www.facebook.com" className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary">
                     <svg
                       fill="currentColor"
                       strokeLinecap="round"

@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import linkedin from "../assets/linkedin.svg"
+import { defaultBannerConfig } from "../config/banner-config";
+import { getBannerConfig } from "../services/banner.service";
+import { BannerConfig } from "../services/types";
 
 export default function Banner() {
+    const [bannerConfig, setBannerConfig] = useState<BannerConfig>(defaultBannerConfig);
+
+    useEffect(() => {
+        const fetchConfig = async () => {
+            const config = await getBannerConfig();
+            setBannerConfig(config);
+        };
+        fetchConfig();
+    }, []);
+
+    if (!bannerConfig.isEnabled) return null;
+    
     return (
-        <div className="narrow-banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-2 py-2 sm:px-1 sm:before:flex-1">
+        <div className="narrow-banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 dark:bg-gray-800 px-4 py-0.5 w-full">
             <div
                 className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
                 aria-hidden="true">
@@ -30,9 +45,9 @@ export default function Banner() {
                     <strong className="font-semibold">This site is under construction. To know more about me checkout</strong>
                     <a
                         href="https://www.linkedin.com/in/benjaminmishra/"
-                        className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        className="flex-none rounded-full bg-gray-900 dark:bg-gray-700 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 dark:hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
-                        <img src={linkedin} alt="linked in logo" />
+                        <img src={linkedin} alt="linked in logo" className="filter dark:invert" />
                     </a>
 
                 </p>
