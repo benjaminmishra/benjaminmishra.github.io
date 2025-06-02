@@ -52,3 +52,12 @@ body {
     color: white;
     text-align: center;
 }
+
+/* Style for the narrower banner and its contents */
+.narrow-banner {
+  font-size: 0.8em; /* Make text slightly smaller within the banner */
+}
+
+.narrow-banner svg {
+  height: 1.5em; /* Adjust SVG height relative to the reduced font size */
+}

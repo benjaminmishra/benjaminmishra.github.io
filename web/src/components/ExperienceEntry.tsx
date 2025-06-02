@@ -3,7 +3,7 @@ import React from 'react';
 interface Experience {
   company: string;
   title: string;
- duration: string;
+  duration: string;
   description: string;
 }
 

@@ -1,14 +1,10 @@
-export const content = ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"];
-export const media = true;
-export const theme = {
-  extend: {},
-  colors: {
-    transparent: "transparent",
-    current: "currentColor",
-  },
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class', // Enable dark mode using the 'class' strategy
   content: ["input.css"],
   theme: {
     extend: {},
   },
   plugins: [],
 };
+
