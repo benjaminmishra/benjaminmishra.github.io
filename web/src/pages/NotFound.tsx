@@ -11,19 +11,10 @@ export default function NotFound() {
       <p className="text-gray-600">
         Sorry, the page youre looking for doesnt exist.
       </p>
-      {/*
-      <div className="mt-6">
-        <input
-          type="text"
-          placeholder="Search for content..."
-          className="rounded-lg border px-4 py-2 focus:border-blue-500 focus:outline-none"
-        />
-      </div> */}
-
       <div className="mt-4 justify-between text-center">
         <p className="mb-3 text-gray-600">You might want to explore:</p>
         <Link to="/">Home</Link>
-        <Link to="/workex">Work Expereince</Link>
+        <Link to="/workex">Work Experience</Link>
         <Link to="/contact">Contact Me</Link>
       </div>
     </div>
