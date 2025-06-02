@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import Logo from "./logo";
+import Logo from "./Logo";
 import Banner from "./banner";
 
 export default function Header() {
