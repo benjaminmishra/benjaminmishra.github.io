@@ -1,20 +1,31 @@
 import React from "react";
 
 export default function Logo() {
-
   const handleOnClick = () => {
     window.location.href = "/";
   };
 
   return (
     <button>
-      <span className="sr-only">Benjamin Logo</span>
-      <img
-        alt="logo"
-        className="h-8 w-auto sm:h-10"
+      <svg width="100" height="30" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg"
         onClick={handleOnClick}
-        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-      />
+      >
+        <style>
+          {`
+          .comment {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            fill: #888; /* Grey color for comments */
+          }
+          .initials {
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            fill: #888;
+          }
+          `}
+        </style>
+        <text x="25" y="20" className="initials">[BM]</text>
+      </svg>
     </button>
   );
 }

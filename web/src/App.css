@@ -1,7 +1,11 @@
+body {
+  overflow-y: scroll; /* Always show vertical scrollbar*/
+}
+
 .App {
-    display: flex;
-    flex-direction: column;
-    min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
 }
 
 .App-logo {
