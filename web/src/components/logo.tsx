@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "../public/favicon.svg";
 
-export default function Logo() {
+function Logo() {
   const handleOnClick = () => {
     window.location.href = "/";
   };
@@ -12,3 +11,5 @@ export default function Logo() {
     </button>
   );
 }
+
+export default Logo;
