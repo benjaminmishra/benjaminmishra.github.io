@@ -32,10 +32,10 @@ export default function ArticlePreview({ ArticleId }: ArticleProps) {
                 <p className='mt-2 font-bold'>
                     {Article.publishedDate}
                 </p>
-                <h2 className='font-extrabold text-[20px] mt-2 mb-2 hover:text-Yellow hover:cursor-pointer'>
+                <h2 className='font-extrabold text-[20px] mt-2 mb-2 hover:text-black hover:cursor-pointer'>
                     {Article.title}
                 </h2>
-                <p className='text-Grey'>
+                <p className='text-black'>
                     {Article.summary}
                 </p>
             </div>

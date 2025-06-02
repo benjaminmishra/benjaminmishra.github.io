@@ -1,11 +1,15 @@
 body {
-  overflow-y: scroll; /* Always show vertical scrollbar*/
+  overflow-y: scroll;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  min-height: fit-content;
+  flex: 1;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -21,14 +25,11 @@ body {
 }
 
 .App-header {
-    background-color: #282c34;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
 
 .App-link {
@@ -47,17 +48,24 @@ body {
 
 /* Add this if you have a footer component */
 .Footer {
-    background-color: #282c34;
     padding: 1rem;
-    color: white;
     text-align: center;
+    margin-top: auto;
 }
 
 /* Style for the narrower banner and its contents */
 .narrow-banner {
-  font-size: 0.8em; /* Make text slightly smaller within the banner */
+  font-size: 0.8em;
 }
 
 .narrow-banner svg {
-  height: 1.5em; /* Adjust SVG height relative to the reduced font size */
+  height: 1.5em;
+}
+
+/* Add responsive container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

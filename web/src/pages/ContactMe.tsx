@@ -6,10 +6,10 @@ export default function ContactMe() {
   return (
     <Layout>
     <div>
-      <section className="body-font relative text-gray-700 font-FigTree">
+      <section className="body-font relative text-black font-FigTree">
         <div className="container mx-auto px-5 py-24">
           <div className="mb-12 flex w-full flex-col text-center">
-            <h1 className="title-font mb-4 text-2xl font-medium text-gray-900 sm:text-3xl">
+            <h1 className="title-font mb-4 text-2xl font-medium text-black sm:text-3xl">
               Contact Me
             </h1>
             <p className="mx-auto text-base leading-relaxed lg:w-2/3 font-FigTree">
@@ -21,17 +21,14 @@ export default function ContactMe() {
             <div className="-m-2 flex flex-wrap">
               <div className="w-1/2 p-2">
                 <div className="relative">
-                  <label
-                    htmlFor="name"
-                    className="text-sm leading-7 text-gray-600"
-                  >
+                  <label htmlFor="name" className="text-sm leading-7 text-black">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500"
+                    className="w-full rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-8 text-black outline-none transition-colors duration-200 ease-in-out focus:border-black"
                   />
                 </div>
               </div>
@@ -39,7 +36,7 @@ export default function ContactMe() {
                 <div className="relative">
                   <label
                     htmlFor="email"
-                    className="text-sm leading-7 text-gray-600"
+                    className="text-sm leading-7 text-black"
                   >
                     Email
                   </label>
@@ -47,7 +44,7 @@ export default function ContactMe() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500"
+                    className="w-full rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-8 text-black outline-none transition-colors duration-200 ease-in-out focus:border-black"
                   />
                 </div>
               </div>
@@ -55,14 +52,14 @@ export default function ContactMe() {
                 <div className="relative">
                   <label
                     htmlFor="message"
-                    className="text-sm leading-7 text-gray-600"
+                    className="text-sm leading-7 text-black"
                   >
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    className="h-32 w-full resize-none rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-6 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500"
+                    className="h-32 w-full resize-none rounded border border-gray-300 bg-gray-100 px-3 py-1 text-base leading-6 text-black outline-none transition-colors duration-200 ease-in-out focus:border-black"
                   ></textarea>
                 </div>
               </div>

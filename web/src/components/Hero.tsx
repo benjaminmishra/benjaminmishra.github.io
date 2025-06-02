@@ -9,13 +9,13 @@ export default function Hero() {
             {/* Added padding-y (py-12) for more vertical spacing */}
             <div className="sm:text-center lg:text-left py-12">
               {/* Adjusted font-weight to semibold and slightly increased bottom margin */}
-              <h1 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-4">
+              <h1 className="text-4xl font-semibold tracking-tight text-black sm:text-5xl md:text-6xl mb-4">
                 <span className="block xl:inline">Hello,</span>{" "}
-                <span className="block text-indigo-600 xl:inline">
+                <span className="block text-black xl:inline">
                   my name is Benjamin
                 </span>
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+              <p className="mt-3 text-base text-black sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                 I am a software engineer with over a decade of experience in the
                 industry. {/* Adjusted top margin */}
 

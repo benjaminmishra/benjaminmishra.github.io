@@ -3,7 +3,7 @@ import linkedin from "../assets/linkedin.svg"
 
 export default function Banner() {
     return (
-        <div className="narrow-banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-2 py-1 sm:px-1 sm:before:flex-1">
+        <div className="narrow-banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-2 py-2 sm:px-1 sm:before:flex-1">
             <div
                 className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
                 aria-hidden="true">
@@ -26,7 +26,7 @@ export default function Banner() {
                 />
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <p className="flex text-sm leading-6 text-gray-900">
+                <p className="flex text-sm leading-6">
                     <strong className="font-semibold">This site is under construction. To know more about me checkout</strong>
                     <a
                         href="https://www.linkedin.com/in/benjaminmishra/"
