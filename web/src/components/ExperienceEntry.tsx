@@ -17,11 +17,10 @@ interface ExperienceEntryProps {
 const ExperienceEntry: React.FC<ExperienceEntryProps> = ({ experience, summary, isSelected, onClick }) => {
   return (
     <div
-      className={`relative border-l-2 border-blue-500 pl-8 cursor-pointer pr-4 mb-4 transition-all duration-300 overflow-hidden ${
-        isSelected 
-          ? 'border-blue-700 bg-blue-100 dark:bg-blue-900 bg-opacity-75 dark:bg-opacity-25 scale-105 shadow-lg pb-12 min-h-[300px]' 
+      className={`relative border-l-2 border-blue-500 pl-8 cursor-pointer pr-4 mb-4 transition-all duration-300 overflow-hidden ${isSelected
+          ? 'border-blue-700 bg-blue-100 dark:bg-blue-900 bg-opacity-75 dark:bg-opacity-25 scale-105 shadow-lg pb-12 min-h-[300px]'
           : 'border-blue-500 bg-background-light dark:bg-background-dark pb-4 min-h-[150px]'
-      }`}
+        }`}
       onClick={onClick}
     >
       <div className={`absolute w-4 h-4 bg-blue-500 rounded-full -left-2 top-0 transition-colors duration-200 ${isSelected ? 'bg-blue-700' : 'bg-blue-500'}`}></div>

@@ -9,6 +9,10 @@ import rehypeSanitize from 'rehype-sanitize';
 import Layout from './Layout';
 import { Article as ArticleType, getArticleBySlug } from '../services/article.service';
 
+import ArticleTag from '../components/ArticleTag';
+import ArticleHeroImage from '../components/ArticleHeroImage';
+import ArticlePublishedDate from '../components/ArticlePublishedDate';
+
 export default function Article() {
     const { slug } = useParams<{ slug: string }>();
     const navigate = useNavigate();
@@ -69,17 +73,7 @@ export default function Article() {
             {article && ( // Ensure article is not null after loading
                 <article className="max-w-4xl mx-auto px-4 py-8">
                     <div className="prose prose-xl dark:prose-invert max-w-none">
-                        {article.imageUrl && (
-                            <img
-                                src={article.imageUrl}
-                                alt={article.title}
-                                className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg mb-8"
-                            />
-                        )}
-
-                        <p className="text-sm text-text-light dark:text-text-dark opacity-75">
-                            Published on {new Date(article.publishedDate).toLocaleDateString()}
-                        </p>
+                        <ArticlePublishedDate publishedDate={article.publishedDate} />
 
                         <div className="markdown-content">
                             <ReactMarkdown
@@ -90,16 +84,14 @@ export default function Article() {
                             </ReactMarkdown>
                         </div>
                     </div>
+                    {article.imageUrl && (
+                        <ArticleHeroImage imageUrl={article.imageUrl} title={article.title} />
+                    )}
 
                     {article.tags && article.tags.length > 0 && (
                         <div className="mt-8 flex flex-wrap gap-2">
                             {article.tags.map(tag => (
-                                <span
-                                    key={tag}
-                                    className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-text-light dark:text-text-dark"
-                                >
-                                    {tag}
-                                </span>
+                                <ArticleTag key={tag} tag={tag} />
                             ))}
                         </div>
                     )}
