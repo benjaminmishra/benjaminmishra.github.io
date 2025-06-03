@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 // Mock the Experience component as it's a dependency and we want to test the WorkExperience page's rendering of it
 jest.mock('../components/expereince', () => {
   return ({ experiences }: { experiences: any[] }) => (
-    <div data-testid="experience-component">
+    <div data-testid="experience-component-mock">
       {experiences.map((exp, index) => (
         <div key={index} data-testid={`experience-entry-${index}`}>
           <div data-testid={`experience-company-${index}`}>{exp.company}</div>
