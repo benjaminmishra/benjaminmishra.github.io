@@ -14,13 +14,13 @@ export default function ArticlePreview({ article }: ArticleProps) {
     }
 
     return (
-        <div 
-        id={`article-${article.id.toString()}`} 
-        className='flex flex-col justify-center bg-background-light dark:bg-background-dark m-6 p-4 border-2 border-text-light dark:border-text-dark shadow-[10px_10px_0px_1px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_1px_rgba(255,255,255,0.8)] font-FigTree text-base cursor-pointer transition-transform hover:scale-105'
-        onClick={handleOnClick}>
-            <img 
-                src={article.imageUrl || "/assets/illustration-article.svg"} 
-                alt='article illustration' 
+        <div
+            id={`article-${article.id.toString()}`}
+            className='flex flex-col justify-center bg-background-light dark:bg-background-dark m-6 p-4 border-2 border-text-light dark:border-text-dark shadow-[10px_10px_0px_1px_rgba(0,0,0,1)] dark:shadow-[10px_10px_0px_1px_rgba(255,255,255,0.8)] font-FigTree text-base cursor-pointer transition-transform hover:scale-105'
+            onClick={handleOnClick}>
+            <img
+                src={article.imageUrl || "/assets/illustration-article.svg"}
+                alt='article illustration'
                 className="w-full h-48 object-cover rounded"
             />
             <div className='mt-4'>

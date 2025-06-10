@@ -16,21 +16,21 @@ export default function Footer() {
             href="https://www.twitter.com/benjaminmishra"
             className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary"
           >
-            <img src={TwitterIcon} alt="Twitter" className="filter dark:invert"/>
+            <img src={TwitterIcon} alt="Twitter" className="filter dark:invert" />
             <span className="sr-only">Twitter page</span>
           </a>
           <a
             href="https://www.linkedin.com/in/benjaminmishra/"
             className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary"
           >
-            <img src={LinkedInIcon} alt="LinkedIn" className="filter dark:invert"/>
+            <img src={LinkedInIcon} alt="LinkedIn" className="filter dark:invert" />
             <span className="sr-only">Linkedin account</span>
           </a>
           <a
             href="https://www.github.com/benjaminmishra/"
             className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary"
           >
-            <img src={GithubIcon} alt="Github" className="filter dark:invert"/>
+            <img src={GithubIcon} alt="Github" className="filter dark:invert" />
             <span className="sr-only">Github account</span>
           </a>
         </div>

@@ -16,7 +16,7 @@ export default function Banner() {
     }, []);
 
     if (!bannerConfig.isEnabled) return null;
-    
+
     return (
         <div className="narrow-banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 dark:bg-gray-800 px-4 py-0.5 w-full">
             <div
