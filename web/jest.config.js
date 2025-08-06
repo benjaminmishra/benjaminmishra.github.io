@@ -1,17 +1,12 @@
-export {};
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 export default {
   preset: 'ts-jest',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
-
-      // if your using tsconfig.paths thers is no harm in telling jest
+    '\\.css$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/src/__mocks__/svg.tsx',
+    'react-markdown': '<rootDir>/src/__mocks__/react-markdown.tsx',
     '@components/(.*)$': '<rootDir>/src/components/$1',
     '@/(.*)$': '<rootDir>/src/$1',
   },
-   // to obtain access to the matchers.
-  setupFilesAfterEnv: ['./tests/setupTests.ts'],
-      
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  modulePaths: ['<rootDir>'],
-  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['./src/setupTests.ts'],
 };
