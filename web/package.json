@@ -31,7 +31,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
- "node_modules/(?!(react-markdown|devlop|vfile|unist-util-stringify-position|unist-util-generated|comma-separated-values|vfile-message|mdast-util-to-string|micromark|parse-entities|decode-named-character-reference|reshape|hast-util-to-parse5|hast-to-hyperscript|property-information|space-separated-tokens|web-namespaces|svg-element-attributes|html-element-attributes|mathml-element-attributes|mdast-util-from-markdown|mdast-util-to-markdown|remark-parse|remark-stringify|unified|vfile-history|vfile-location|acorn|ccount|character-entities|decode-entity|fault|is-plain-obj|markdown-escapes|markdown-table|perbundle|remark-rehype|detab|gemoji|slugify|trim-lines|stringify-entities|long-pressu|react-uid|refractor|highlight-as|domhandler|domutils|css-what|nth-check|htmlparser2|dom-serializer|entities|hoist-non-react-statics|react-syntax-highlighter)/)"
+      "node_modules/(?!(react-markdown|devlop|vfile|unist-util-stringify-position|unist-util-generated|comma-separated-values|vfile-message|mdast-util-to-string|micromark|parse-entities|decode-named-character-reference|reshape|hast-util-to-parse5|hast-to-hyperscript|property-information|space-separated-tokens|web-namespaces|svg-element-attributes|html-element-attributes|mathml-element-attributes|mdast-util-from-markdown|mdast-util-to-markdown|remark-parse|remark-stringify|unified|vfile-history|vfile-location|acorn|ccount|character-entities|decode-entity|fault|is-plain-obj|markdown-escapes|markdown-table|perbundle|remark-rehype|detab|gemoji|slugify|trim-lines|stringify-entities|long-pressu|react-uid|refractor|highlight-as|domhandler|domutils|css-what|nth-check|htmlparser2|dom-serializer|entities|hoist-non-react-statics|react-syntax-highlighter)/)"
     ],
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
@@ -56,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.28.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
