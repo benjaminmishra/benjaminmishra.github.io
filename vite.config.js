@@ -21,7 +21,7 @@ export default defineConfig({
     cssMinify: true,
     rollupOptions: {
       input: {
-        main: './public/index.html'
+        main: './index.html'
       }
     }
   },
