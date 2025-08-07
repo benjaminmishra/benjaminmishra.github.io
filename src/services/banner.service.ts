@@ -1,7 +1,7 @@
 import { BannerConfig } from './types';
 import { defaultBannerConfig } from '../config/banner-config';
 
-const BANNER_API_URL = process.env.REACT_APP_API_URL ? `${process.env.REACT_APP_API_URL}/banner` : '';
+const BANNER_API_URL = import.meta.env.REACT_APP_API_URL ? `${import.meta.env.REACT_APP_API_URL}/banner` : '';
 
 export const getBannerConfig = async (): Promise<BannerConfig> => {
     if (!BANNER_API_URL) {

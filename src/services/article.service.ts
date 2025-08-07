@@ -10,7 +10,7 @@ export interface Article {
     category?: string;
 }
 
-const API_URL = process.env.REACT_APP_API_URL ? `${process.env.REACT_APP_API_URL}/articles` : '';
+const API_URL = import.meta.env.REACT_APP_API_URL ? `${import.meta.env.REACT_APP_API_URL}/articles` : '';
 
 // Metadata for our articles
 const ARTICLE_METADATA = {
