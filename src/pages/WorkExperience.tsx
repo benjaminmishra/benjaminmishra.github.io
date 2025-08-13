@@ -1,27 +1,9 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
 import ExperienceEntry from "../components/ExperienceEntry";
-
-const workExperiences = [
-  {
-    company: "Tech Solutions Inc.",
-    title: "Software Engineer",
-    duration: "Jan 2020 - Present",
-    description: "Responsible for the full stack development of critical web applications using modern frameworks. Collaborated with cross-functional teams to define, design, and ship new features. Implemented robust testing procedures to ensure high code quality and application stability. Actively participated in code reviews and mentored junior developers."
-  },
-  {
-    company: "Innovate Systems",
-    title: "Frontend Developer",
-    duration: "Jun 2018 - Dec 2019",
-    description: "Focused on building responsive and user-friendly interfaces for various client projects. Utilized React and related libraries to create dynamic user experiences. Worked closely with UI/UX designers to translate wireframes and mockups into functional web pages. Optimized frontend performance for faster loading times."
-  },
-  {
-    company: "Data Insights Co.",
-    title: "Intern",
-    duration: "May 2017 - Aug 2017",
-    description: "Assisted senior analysts in collecting, cleaning, and analyzing large datasets. Created visualizations and reports to present findings to stakeholders. Gained experience with data manipulation tools and statistical software. Contributed to the documentation of analysis processes."
-  },
-];
+import LinkedInIcon from "../assets/linkedin.svg";
+import GithubIcon from "../assets/github.svg";
+import { workExperiences } from "./workExperiences";
 
 export default function WorkExperience() {
   const [selectedExperience, setSelectedExperience] = useState<any>(null);
@@ -32,18 +14,49 @@ export default function WorkExperience() {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
-        <div className="relative">
-          {workExperiences.map((experience, index) => (
-            <ExperienceEntry
-              key={index}
-              experience={experience}
-              summary={experience.description.substring(0, 100) + '...'}
-              isSelected={selectedExperience === experience}
-              onClick={() => handleExperienceClick(experience)}
-            />
-          ))}
+      <div className="container mx-auto px-4 py-8">        
+        <div className="mb-10 text-center max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Work Experience</h2>
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://www.linkedin.com/in/benjaminmishra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-light dark:text-text-dark hover:text-primary flex items-center space-x-2"
+            >
+              <img src={LinkedInIcon} alt="LinkedIn" className="h-6 w-6 filter dark:invert" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/benjaminmishra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-light dark:text-text-dark hover:text-primary flex items-center space-x-2"
+            >
+              <img src={GithubIcon} alt="GitHub" className="h-6 w-6 filter dark:invert" />
+              <span className="sr-only">GitHub</span>
+            </a>
+          </div>
+        </div>
+        <div className="relative max-w-3xl mx-auto">
+          {workExperiences.map((experience, index) => {
+            // Derive a short summary: use the first bullet if available, otherwise slice the string
+            let summary: string;
+            if (Array.isArray(experience.description)) {
+              summary = experience.description[0];
+            } else {
+              summary = experience.description.substring(0, 100) + '…';
+            }
+            return (
+              <ExperienceEntry
+                key={index}
+                experience={experience}
+                summary={summary}
+                isSelected={selectedExperience === experience}
+                onClick={() => handleExperienceClick(experience)}
+              />
+            );
+          })}
         </div>
       </div>
     </Layout>

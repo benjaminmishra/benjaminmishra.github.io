@@ -4,7 +4,8 @@ interface Experience {
   company: string;
   title: string;
   duration: string;
-  description: string;
+  description: string | string[];
+  technologies?: string[];
 }
 
 interface ExperienceEntryProps {
@@ -30,7 +31,28 @@ const ExperienceEntry: React.FC<ExperienceEntryProps> = ({ experience, summary, 
 
       {isSelected && (
         <div className="mt-2 text-text-light dark:text-text-dark opacity-90 overflow-auto">
-          <p className="mt-2 text-text-light dark:text-text-dark opacity-90">{experience.description}</p>
+          {/* If description is an array, render it as a bulleted list for improved readability. */}
+          {Array.isArray(experience.description) ? (
+            <ul className="list-disc ml-5 space-y-2">
+              {experience.description.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-2 text-text-light dark:text-text-dark opacity-90">{experience.description}</p>
+          )}
+          {experience.technologies && experience.technologies.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {experience.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-block bg-blue-500/10 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300 px-2 py-1 rounded-full text-xs font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       )}
       {!isSelected && (

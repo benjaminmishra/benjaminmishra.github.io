@@ -1,0 +1,20 @@
+{
+  "name": "cf-pages-yarn",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20",
+      "nodeGypDependencies": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "postCreateCommand": [
+    "corepack enable",
+    "yarn set version stable",
+    "yarn add -D wrangler@^4",          // pin Wrangler v4
+    "if [ -f package.json ]; then yarn install; fi",
+    "node -v && yarn -v && ./node_modules/.bin/wrangler --version || true"
+  ],
+  "forwardPorts": [5173, 8788],
+  "remoteUser": "vscode"
+}

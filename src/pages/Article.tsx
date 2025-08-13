@@ -70,7 +70,7 @@ export default function Article() {
     // Render article content
     return (
         <Layout>
-            {article && ( // Ensure article is not null after loading
+            {article && (
                 <article className="max-w-4xl mx-auto px-4 py-8">
                     <div className="prose prose-xl dark:prose-invert max-w-none">
                         <ArticlePublishedDate publishedDate={article.publishedDate} />
