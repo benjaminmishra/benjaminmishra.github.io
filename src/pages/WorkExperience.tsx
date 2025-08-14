@@ -40,16 +40,15 @@ export default function WorkExperience() {
         </div>
         <div className="relative max-w-3xl mx-auto">
           {workExperiences.map((experience, index) => {
-            // Derive a short summary: use the first bullet if available, otherwise slice the string
             let summary: string;
             if (Array.isArray(experience.description)) {
               summary = experience.description[0];
             } else {
-              summary = experience.description.substring(0, 100) + '…';
+              summary =  experience.description[0] + '…';
             }
             return (
               <ExperienceEntry
-                key={index}
+                key={experience.id}
                 experience={experience}
                 summary={summary}
                 isSelected={selectedExperience === experience}

@@ -1,8 +1,8 @@
-// Define Benjamin's real work experiences. Each entry includes an array
-// of achievements to be rendered as bullet points and an optional list
-// of technologies to be displayed as tags.
+import {v4 as uuidv4} from 'uuid';
+
 export const workExperiences = [
   {
+    id: `avalanche-studios-${uuidv4()}`,
     company: "Avalanche Studios",
     title: "Senior Backend Engineer",
     duration: "Jan 2025 – Present",
@@ -15,6 +15,7 @@ export const workExperiences = [
     technologies: ["C#", ".NET", "Golang", "Azure", "AKS", "App Service", "KeyVault", "Distributed Systems", "CI/CD"],
   },
   {
+    id: `ringtail-technology-${uuidv4()}`,
     company: "Ringtail Technology",
     title: "Senior Software Engineer",
     duration: "Nov 2021 – Dec 2024",
@@ -28,6 +29,7 @@ export const workExperiences = [
     technologies: ["Golang", ".NET", "OpenTelemetry", "Grafana", "Jaeger", "CI/CD", "Azure DevOps"],
   },
   {
+    id: `shell-${uuidv4()}`,
     company: "Shell",
     title: "Senior Software Engineer",
     duration: "Aug 2016 – Nov 2021",
@@ -38,9 +40,10 @@ export const workExperiences = [
       "Designed and developed both microservices and monolithic applications using C#, Golang, Python, NodeJs and React.",
       "Designed RESTful public and private APIs, maintained infrastructure and CI/CD/CT pipelines, and mentored junior developers.",
     ],
-    technologies: ["C#", "Golang", "Python", "NodeJs", "React", "Azure", "AWS", "Terraform", "Selenium", "CI/CD", "Databricks"],
+    technologies: ["C#", "Golang", "Python", "NodeJs", "React", "Azure", "AWS", "Terraform", "Selenium", "CI/CD", "Databricks", "ETL"],
   },
   {
+    id: `wipro-${uuidv4()}`,
     company: "Wipro",
     title: "Project Engineer",
     duration: "Nov 2011 – Apr 2016",
