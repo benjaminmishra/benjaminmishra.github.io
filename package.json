@@ -17,7 +17,8 @@
     "remark-toc": "^9.0.0",
     "typescript": "^5.4.5",
     "uuid": "^9.0.0",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "wrangler": "^4.30.0"
   },
   "scripts": {
     "start": "vite",
@@ -72,8 +73,7 @@
     "react-test-renderer": "^18.3.1",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.5",
-    "vite": "^4.0.0",
-    "wrangler": "^4.29.1"
+    "vite": "^4.0.0"
   },
   "packageManager": "yarn@4.9.2"
 }
