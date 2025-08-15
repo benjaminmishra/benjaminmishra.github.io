@@ -9,9 +9,9 @@ export default function Header() {
       <Banner />
       <div className="flex h-16 items-center px-4 font-FigTree bg-background-light dark:bg-background-dark">
         {/* Brand / Name on the left */}
-        {/* <span className="text-lg sm:text-lg font-semibold text-text-light dark:text-text-dark">
+        <span className="text-lg sm:text-lg font-semibold text-text-light dark:text-text-dark">
           Benjamin Moloise Mishra
-        </span> */}
+        </span>
         {/* Navigation links with spacing */}
         <div className="ml-10 flex-1">
           <Nav />

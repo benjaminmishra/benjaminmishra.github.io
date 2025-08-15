@@ -1,3 +1,4 @@
+import { EventContext } from '@cloudflare/workers-types/experimental';
 import { createTransport } from 'nodemailer';
 
 // Cloudflare Pages Function to send contact messages via Gmail SMTP.
@@ -10,19 +11,31 @@ import { createTransport } from 'nodemailer';
 
 export const onRequestPost = async (context: any) => {
   const { request, env } = context;
-  let body: { name?: string; message?: string } = {};
+  let body: { 
+    name?: string; 
+    email?: string; 
+    message?: string 
+  } = {};
   
   try {
     body = await request.json();
   } catch (err) {
+    console.log(err);
     return new Response(JSON.stringify({ success: false, error: 'Invalid JSON' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
   }
   
-  const { name, message } = body;
-  
+  const { name, email ,message } = body;
+
+  if(!email){
+    return new Response(JSON.stringify({ success: false, error: 'Email is required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
   if (!message) {
     return new Response(JSON.stringify({ success: false, error: 'Message is required' }), {
       status: 400,
