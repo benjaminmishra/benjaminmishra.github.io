@@ -8,7 +8,8 @@ export default function Header() {
     <header className="w-full">
       <Banner />
       <div className="flex h-16 items-center justify-between px-4 font-FigTree bg-background-light dark:bg-background-dark">
-        <Logo />
+        {/* Logo removed per user request – leaving space empty to centre nav */}
+        {/* <Logo /> */}
         <div className="flex items-center space-x-4">
           <Nav />
           <button

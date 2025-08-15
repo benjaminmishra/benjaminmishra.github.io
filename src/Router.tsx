@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import BlogLanding from "./pages/BlogLanding";
 import Article from "./pages/Article";
+import Projects from "./pages/Projects";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ export default function Router() {
     {
       path: "/workex",
       element: <WorkExperience />,
+    },
+    {
+      path: "/projects",
+      element: <Projects />, 
     },
     {
       path: "/blog",

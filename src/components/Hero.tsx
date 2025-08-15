@@ -11,27 +11,24 @@ export default function Hero() {
    */
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-slate-900 to-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-24 sm:py-32 lg:py-40 text-center">
-        <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-          Crafting impactful software
-        </p>
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 leading-tight">
-          Turning ideas
-          <br className="hidden sm:block" />
-          into scalable solutions
+      <div className="max-w-7xl mx-auto px-6 py-20 sm:py-28 lg:py-32 text-center">
+        {/* Main heading shows Benjamin's name and designation without additional tagline */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+          Benjamin&nbsp;Mishra
         </h1>
-        <p className="max-w-3xl mx-auto text-lg text-gray-300 mb-10">
-          I'm Benjamin, a senior software engineer specialising in backend architecture and
-          distributed systems. I design, build and scale secure products that empower
-          businesses and delight users.
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-200 mb-6">
+          Senior Software Engineer&nbsp;|&nbsp;Backend&nbsp;|&nbsp;Distributed Systems
+        </h2>
+        <p className="max-w-3xl mx-auto text-base sm:text-lg text-gray-300 mb-10">
+          I design and run reliable services that stay fast when lots of people use them.
         </p>
         <div className="flex flex-col sm:flex-row sm:justify-center gap-4">
-          {/* <Link
-            to="/workex"
+          <Link
+            to="/projects"
             className="inline-block rounded-md bg-primary px-6 py-3 text-text-dark font-medium hover:bg-primary-dark transition-colors"
           >
             View My Work
-          </Link> */}
+          </Link>
           <Link
             to="/contact"
             className="inline-block rounded-md border border-gray-600 px-6 py-3 text-gray-200 font-medium hover:bg-gray-800 hover:border-gray-500 transition-colors"
