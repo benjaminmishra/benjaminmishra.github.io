@@ -11,30 +11,47 @@ export default function Hero() {
    */
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-slate-900 to-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-20 sm:py-28 lg:py-32 text-center">
-        {/* Main heading shows Benjamin's name and designation without additional tagline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-          Benjamin&nbsp;Mishra
-        </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-200 mb-6">
-          Senior Software Engineer&nbsp;|&nbsp;Backend&nbsp;|&nbsp;Distributed Systems
-        </h2>
-        <p className="max-w-3xl mx-auto text-base sm:text-lg text-gray-300 mb-10">
-          I design and run reliable services that stay fast when lots of people use them.
-        </p>
-        <div className="flex flex-col sm:flex-row sm:justify-center gap-4">
-          <Link
-            to="/projects"
-            className="inline-block rounded-md bg-primary px-6 py-3 text-text-dark font-medium hover:bg-primary-dark transition-colors"
-          >
-            View My Work
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-block rounded-md border border-gray-600 px-6 py-3 text-gray-200 font-medium hover:bg-gray-800 hover:border-gray-500 transition-colors"
-          >
-            Get In Touch
-          </Link>
+      <div className="max-w-7xl mx-auto px-6 py-20 sm:py-28 lg:py-32">
+        {/*
+          Align portrait and content side by side on larger screens.
+          The entire content area is centered horizontally, so the headline,
+          subtitle and calls to action appear balanced in the middle of the hero.
+        */}
+        <div className="flex flex-col md:flex-row items-center md:items-center gap-0">
+          <img
+            src="/benjamin.png"
+            alt="Benjamin Mishra"
+            className="w-50 h-50 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full mb-6 md:mb-0 object-cover"
+          />
+          <div className="flex-1 text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 leading-tight">
+              Benjamin&nbsp;Mishra
+            </h1>
+            {/* <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-200 mb-4">
+              Senior Software Engineer
+            </h2> */}
+            <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-200 mb-4">
+              Backend&nbsp;|&nbsp;Distributed&nbsp;Systems
+            </h2>
+            <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-300 mb-6">
+              I architect and build reliable services that stay fast when lots of people use them.
+            </p>
+            {/* Calls to action are centered horizontally for a balanced look */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/projects"
+                className="inline-block rounded-md bg-primary px-6 py-3 text-text-dark font-medium hover:bg-primary-dark transition-colors"
+              >
+                View My Work
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-block rounded-md border border-gray-600 px-6 py-3 text-gray-200 font-medium hover:bg-gray-800 hover:border-gray-500 transition-colors"
+              >
+                Get In Touch
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

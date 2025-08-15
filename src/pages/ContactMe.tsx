@@ -8,6 +8,7 @@ export default function ContactMe() {
 
     const formData = new FormData(event.target as HTMLFormElement);
     const name = formData.get('name');
+    const email = formData.get('email');
     const message = formData.get('message');
 
     try {
@@ -16,7 +17,7 @@ export default function ContactMe() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, message }),
+        body: JSON.stringify({ name, email, message }),
       });
 
       if (response.ok) {
@@ -56,10 +57,24 @@ export default function ContactMe() {
                     className="w-full rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-8 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
                   />
                 </div>
-
               </div>
               <div className="w-full p-2">
-
+                <div className="relative">
+                  <label
+                    htmlFor="message"
+                    className="text-sm leading-7 text-text-light dark:text-text-dark"
+                  >
+                    Your Email
+                  </label>
+                  <input
+                    type="text"
+                    id="Email"
+                    name="email"
+                    className="w-full rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-8 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
+                  />
+                </div>
+              </div>
+              <div className="w-full p-2">
                 <div className="relative">
                   <label
                     htmlFor="message"
