@@ -4,7 +4,5 @@ pages_build_output_dir = "build"
 compatibility_date = "2025-08-06"
 compatibility_flags = ["nodejs_compat"]
 
-[env]
-production = {
-    YARN_VERSION = 1
- }
+[env.production.vars]
+YARN_VERSION = 1
