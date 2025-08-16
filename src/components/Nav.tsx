@@ -6,7 +6,7 @@ import { Home, Briefcase, Code, BookOpen, Mail } from "lucide-react";
 export default function Nav(): JSX.Element {
   return (
     <nav aria-label="Main" className="font-FigTree text-sm w-full">
-      <ul className="flex flex-row items-center justify-around md:justify-end space-x-4 md:space-x-6 w-full">
+      <ul className="flex flex-row items-center justify-between md:justify-end space-x-0 md:space-x-6 w-full">
         <li>
           <Link
             to="/"

@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="w-full">
       <Banner />
-        <div className="flex flex-col md:flex-row md:h-16 items-start md:items-center px-4 font-FigTree bg-background-light dark:bg-background-dark">
+        <div className="flex flex-col md:flex-row md:h-16 items-start md:items-center px-2 md:px-4 font-FigTree bg-background-light dark:bg-background-dark">
           <div className="flex w-full md:w-auto items-center justify-between">
             <span className="text-lg sm:text-lg font-semibold text-text-light dark:text-text-dark">
               Benjamin Moloise Mishra
