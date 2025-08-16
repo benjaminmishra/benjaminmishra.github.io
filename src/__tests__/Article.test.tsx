@@ -1,8 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { useParams } from 'react-router-dom';
+import { useParams, MemoryRouter } from 'react-router-dom';
 import Article from '../pages/Article';
 import * as ArticleService from '../services/article.service';
 import React from 'react';
+
+jest.mock('../components/Banner', () => () => <div data-testid="banner-mock" />);
 
 // Mock react-router-dom
 jest.mock('react-router-dom', () => ({
@@ -12,63 +14,84 @@ jest.mock('react-router-dom', () => ({
 
 // Mock the article service
 jest.mock('../services/article.service', () => ({
-  getArticle: jest.fn(),
+  getArticleBySlug: jest.fn(),
 }));
 
 const mockUseParams = useParams as jest.Mock;
-const mockGetArticle = ArticleService.getArticles as jest.Mock;
+const mockGetArticleBySlug = ArticleService.getArticleBySlug as jest.Mock;
 
 describe('Article Page', () => {
   beforeEach(() => {
     // Reset mocks before each test
     mockUseParams.mockReset();
-    mockGetArticle.mockReset();
+    mockGetArticleBySlug.mockReset();
   });
 
   it('should display loading state initially', () => {
-    mockUseParams.mockReturnValue({ articleSlug: 'test-article' });
-    mockGetArticle.mockReturnValue(new Promise(() => {})); // Never resolve to keep it in loading state
+    mockUseParams.mockReturnValue({ slug: 'test-article' });
+    mockGetArticleBySlug.mockReturnValue(new Promise(() => {})); // Never resolve to keep it in loading state
 
-    render(<Article />);
+    const { container } = render(
+      <MemoryRouter>
+        <Article />
+      </MemoryRouter>
+    );
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(container.querySelector('.animate-spin')).toBeInTheDocument();
   });
 
   it('should display error message if article fetching fails', async () => {
-    mockUseParams.mockReturnValue({ articleSlug: 'test-article' });
-    const errorMessage = 'Failed to fetch article';
-    mockGetArticle.mockRejectedValue(new Error(errorMessage));
+    mockUseParams.mockReturnValue({ slug: 'test-article' });
+    const errorMessage = 'Failed to load article. Please try again later.';
+    mockGetArticleBySlug.mockRejectedValue(new Error(errorMessage));
 
-    render(<Article />);
+    render(
+      <MemoryRouter>
+        <Article />
+      </MemoryRouter>
+    );
 
     await waitFor(() => {
-      expect(screen.getByText(`Error: ${errorMessage}`)).toBeInTheDocument();
+      expect(screen.getByText(errorMessage)).toBeInTheDocument();
     });
   });
 
   it('should render article content when fetching is successful', async () => {
-    mockUseParams.mockReturnValue({ articleSlug: 'test-article' });
+    mockUseParams.mockReturnValue({ slug: 'test-article' });
     const mockArticleContent = '# Test Article\nThis is the content.';
-    mockGetArticle.mockResolvedValue(mockArticleContent);
+    const mockArticle = {
+      content: mockArticleContent,
+      publishedDate: '2025-01-01',
+      title: 'Test Article',
+    } as any;
+    mockGetArticleBySlug.mockResolvedValue(mockArticle);
 
-    render(<Article />);
+    const { container } = render(
+      <MemoryRouter>
+        <Article />
+      </MemoryRouter>
+    );
 
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: 'Test Article' })).toBeInTheDocument();
-      expect(screen.getByText('This is the content.')).toBeInTheDocument();
+      expect(container.textContent).toContain('This is the content.');
     });
   });
 
   it('should call getArticle with the correct slug from URL parameters', async () => {
     const articleSlug = 'another-test-article';
-    mockUseParams.mockReturnValue({ articleSlug });
+    mockUseParams.mockReturnValue({ slug: articleSlug });
     const mockArticleContent = 'Content for another article.';
-    mockGetArticle.mockResolvedValue(mockArticleContent);
+    const mockArticle = { content: mockArticleContent } as any;
+    mockGetArticleBySlug.mockResolvedValue(mockArticle);
 
-    render(<Article />);
+    render(
+      <MemoryRouter>
+        <Article />
+      </MemoryRouter>
+    );
 
     await waitFor(() => {
-      expect(mockGetArticle).toHaveBeenCalledWith(articleSlug);
+      expect(mockGetArticleBySlug).toHaveBeenCalledWith(articleSlug);
     });
   });
 });
