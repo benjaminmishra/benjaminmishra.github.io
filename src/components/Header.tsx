@@ -1,27 +1,26 @@
 import React from "react";
 import Nav from "./Nav";
-import Logo from "./Logo";
 import Banner from "./Banner";
 
 export default function Header() {
   return (
     <header className="w-full">
       <Banner />
-      <div className="flex h-16 items-center px-4 font-FigTree bg-background-light dark:bg-background-dark">
-        {/* Brand / Name on the left */}
-        <span className="text-lg sm:text-lg font-semibold text-text-light dark:text-text-dark">
-          Benjamin Moloise Mishra
-        </span>
-        {/* Navigation links with spacing */}
-        <div className="ml-10 flex-1">
-          <Nav />
-        </div>
-        {/* Dark mode toggle button on the far right */}
-        <button
-          onClick={() => document.documentElement.classList.toggle('dark')}
-          className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 ml-4"
-          aria-label="Toggle dark mode"
-        >
+        <div className="flex flex-col md:flex-row md:h-16 items-start md:items-center px-4 font-FigTree bg-background-light dark:bg-background-dark">
+          {/* Brand / Name on the left */}
+          <span className="text-lg sm:text-lg font-semibold text-text-light dark:text-text-dark">
+            Benjamin Moloise Mishra
+          </span>
+          {/* Navigation links with spacing */}
+          <div className="mt-2 md:mt-0 md:ml-10 w-full md:flex-1">
+            <Nav />
+          </div>
+          {/* Dark mode toggle button on the far right */}
+          <button
+            onClick={() => document.documentElement.classList.toggle('dark')}
+            className="self-end md:self-auto p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 md:ml-4"
+            aria-label="Toggle dark mode"
+          >
           <svg
             className="w-6 h-6 hidden dark:block"
             fill="currentColor"

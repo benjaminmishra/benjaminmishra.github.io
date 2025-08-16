@@ -10,7 +10,9 @@ export default function Nav(): JSX.Element {
         within its container. Combined with the surrounding flex container in
         Header, this ensures the menu appears on the right side of the header
         while the name remains on the left.  */}
-      <ul className="flex items-center space-x-6 justify-end">
+      <ul
+        className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-end space-y-2 md:space-y-0 md:space-x-6"
+      >
         <li>
           <Link to="/" className="text-text-light dark:text-text-dark hover:text-primary">
             Home
