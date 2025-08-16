@@ -1,41 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Home, Briefcase, Code, BookOpen, Mail } from "lucide-react";
 
-// A simplified navigation component that renders plain text links with spacing.
-export default function Nav(): JSX.Element {
+// Responsive navigation with icon-only links on small screens and text labels on larger screens
+export default function Nav() {
   return (
     <nav aria-label="Main" className="font-FigTree text-sm w-full">
-      {/*
-        The navigation list uses `justify-end` to align menu items to the right
-        within its container. Combined with the surrounding flex container in
-        Header, this ensures the menu appears on the right side of the header
-        while the name remains on the left.  */}
-      <ul
-        className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-end space-y-2 md:space-y-0 md:space-x-6"
-      >
+      <ul className="flex flex-row items-center justify-between md:justify-end space-x-0 md:space-x-6 w-full">
         <li>
-          <Link to="/" className="text-text-light dark:text-text-dark hover:text-primary">
-            Home
+          <Link
+            to="/"
+            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
+          >
+            <Home className="w-5 h-5" />
+            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Home</span>
           </Link>
         </li>
         <li>
-          <Link to="/workex" className="text-text-light dark:text-text-dark hover:text-primary">
-            Work Experience
+          <Link
+            to="/workex"
+            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
+          >
+            <Briefcase className="w-5 h-5" />
+            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Work Experience</span>
           </Link>
         </li>
         <li>
-          <Link to="/projects" className="text-text-light dark:text-text-dark hover:text-primary">
-            Projects
+          <Link
+            to="/projects"
+            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
+          >
+            <Code className="w-5 h-5" />
+            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Projects</span>
           </Link>
         </li>
         <li>
-          <Link to="/blog" className="text-text-light dark:text-text-dark hover:text-primary">
-            Blog
+          <Link
+            to="/blog"
+            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
+          >
+            <BookOpen className="w-5 h-5" />
+            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Blog</span>
           </Link>
         </li>
         <li>
-          <Link to="/contact" className="text-text-light dark:text-text-dark hover:text-primary">
-            Contact Me
+          <Link
+            to="/contact"
+            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
+          >
+            <Mail className="w-5 h-5" />
+            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Contact Me</span>
           </Link>
         </li>
       </ul>

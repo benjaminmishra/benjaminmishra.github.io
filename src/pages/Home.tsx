@@ -14,8 +14,8 @@ export default function Home() {
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-12 mx-auto max-w-3xl">
               Staff‑level engineer with 13+ years’ experience building large‑scale, high‑availability platforms in gaming,
-              energy and enterprise domains. I lead cross‑functional teams of 10+, drive release cycles from quarterly to
-              monthly, and design systems to meet 99.9 % uptime while mentoring engineers and collaborating closely with
+              energy and enterprise domains. I have lead cross‑functional teams of 10+, driven release cycles from quarterly to
+              monthly, and designed systems to meet 99.9 % uptime while mentoring engineers and collaborating closely with
               stakeholders.
             </p>
             <div className="grid md:grid-cols-2 gap-8 mx-auto">
