@@ -36,7 +36,7 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <div className="mt-2 md:mt-0 md:ml-10 w-full md:flex-1">
+          <div className="mt-3 md:mt-1 md:ml-10 w-full md:flex-1">
             <Nav />
           </div>
           <button

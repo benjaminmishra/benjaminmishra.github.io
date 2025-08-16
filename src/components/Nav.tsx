@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Home, Briefcase, Code, BookOpen, Mail } from "lucide-react";
 
 // Responsive navigation with icon-only links on small screens and text labels on larger screens
-export default function Nav(): JSX.Element {
+export default function Nav() {
   return (
     <nav aria-label="Main" className="font-FigTree text-sm w-full">
       <ul className="flex flex-row items-center justify-between md:justify-end space-x-0 md:space-x-6 w-full">
