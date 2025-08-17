@@ -15,7 +15,7 @@ interface ExperienceEntryProps {
   onClick: () => void; // eslint-disable-line @typescript-eslint/no-redundant-type-constituents
 }
 
-const ExperienceEntry: React.FC<ExperienceEntryProps> = ({ experience, summary, isSelected, onClick }) => {
+export default function ExperienceEntry({ experience, summary, isSelected, onClick }: ExperienceEntryProps){
   return (
     <div
       className={`relative border-l-2 border-blue-500 pl-8 cursor-pointer pr-4 mb-4 transition-all duration-300 overflow-hidden ${isSelected
@@ -63,5 +63,3 @@ const ExperienceEntry: React.FC<ExperienceEntryProps> = ({ experience, summary, 
     </div>
   );
 };
-
-export default ExperienceEntry;

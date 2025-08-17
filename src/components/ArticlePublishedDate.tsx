@@ -4,7 +4,7 @@ interface ArticlePublishedDateProps {
   publishedDate: string;
 }
 
-const ArticlePublishedDate: React.FC<ArticlePublishedDateProps> = ({ publishedDate }) => {
+export default function ArticlePublishedDate({ publishedDate }: ArticlePublishedDateProps){
   const formattedDate = new Date(publishedDate).toLocaleDateString();
 
   return (
@@ -13,5 +13,3 @@ const ArticlePublishedDate: React.FC<ArticlePublishedDateProps> = ({ publishedDa
     </p>
   );
 };
-
-export default ArticlePublishedDate;

@@ -6,31 +6,23 @@ interface Repo {
   html_url: string;
   description: string | null;
   language: string | null;
+  topics: string[]
 }
 
-/**
- * GitHubProjects
- *
- * Fetches a handful of Benjamin's public repositories from GitHub and
- * displays them in a responsive grid. This section sits beneath the
- * About/Stack cards on the home page. It does not alter the overall layout
- * or styling – cards reuse the same rounded containers and colours as
- * other sections. Repositories are fetched once on mount via the GitHub
- * REST API. The website repository itself is filtered out.
- */
+
 export default function GitHubProjects() {
   const [repos, setRepos] = useState<Repo[]>([]);
 
   useEffect(() => {
     // Fetch the most recently updated repositories. Limit to a handful.
-    fetch("https://api.github.com/users/benjaminmishra/repos?sort=updated&per_page=6")
+    fetch("https://api.github.com/users/benjaminmishra/repos?sort=updated&per_page=10")
       .then((res) => res.json())
       .then((data) => {
         // Filter out the personal website repository and any forks
         const filtered = data.filter((repo: Repo & { fork: boolean }) =>
-          repo.name !== "benjaminmishra.github.io" && !repo.fork,
+          !repo.fork && repo.topics.includes("portfolio")
         );
-        setRepos(filtered.slice(0, 3));
+        setRepos(filtered.slice(0, 10));
       })
       .catch((err) => {
         console.error("Failed to fetch GitHub repositories", err);
@@ -62,7 +54,7 @@ export default function GitHubProjects() {
                 </a>
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                {repo.description || "No description provided."}
+                {repo.description || "No description."}
               </p>
               {repo.language && (
                 <span className="inline-block bg-blue-500/10 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300 px-2 py-1 rounded-full text-xs font-medium">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ArticlePreview from "../components/ArticlePreview";
-import BlogLandingHeader from "../components/blog-landing-header";
+import BlogLandingHeader from "../components/BlogLandingHeader";
 import Layout from "./Layout";
 import { Article, getArticles, ArticleFilters, PaginatedResponse } from "../services/article.service";
 

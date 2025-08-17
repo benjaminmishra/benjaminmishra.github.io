@@ -5,7 +5,7 @@ interface ArticleHeroImageProps {
   title: string;
 }
 
-const ArticleHeroImage: React.FC<ArticleHeroImageProps> = ({ imageUrl, title }) => {
+export default function ArticleHeroImage({ imageUrl, title }: ArticleHeroImageProps) {
   return (
     <img
       src={imageUrl}
@@ -14,5 +14,3 @@ const ArticleHeroImage: React.FC<ArticleHeroImageProps> = ({ imageUrl, title }) 
     />
   );
 };
-
-export default ArticleHeroImage;

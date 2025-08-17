@@ -5,7 +5,7 @@ interface HeroSectionProps {
   title: string;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ backgroundImageUrl, title }) => {
+export default function HeroSection({ backgroundImageUrl, title }: HeroSectionProps) {
   return (
     <div
       className="relative w-full h-96 bg-cover bg-center flex items-end"
@@ -22,5 +22,3 @@ const HeroSection: React.FC<HeroSectionProps> = ({ backgroundImageUrl, title }) 
     </div>
   );
 };
-
-export default HeroSection;

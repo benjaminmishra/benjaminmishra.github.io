@@ -1,11 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
 
-// This file exports an array of work experience objects derived from Benjamin’s
-// latest CV. Each object contains a unique id, company name, role, dates,
-// optional location, a set of descriptive bullet points and a list of key
-// technologies/tools used. The order is reverse chronological to match
-// typical résumé layouts.
-
 export const workExperiences = [
   {
     id: `avalanche-studios-${uuidv4()}`,
