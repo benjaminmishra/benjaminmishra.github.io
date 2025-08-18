@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Benjamin Moloise Mishra Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source for [Benjamin Moloise Mishra](https://benjaminmishra.github.io)'s personal website. The app is built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS** and is deployed to Cloudflare Pages.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+- [Node.js](https://nodejs.org/) 20 or later
+- [Yarn 4](https://yarnpkg.com/getting-started/install) (enable via `corepack enable`)
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone the repository and install dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+git clone <repository-url>
+cd benjaminmishra.github.io
+yarn install
+```
 
-### `yarn test`
+## Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start a local development server with Vite:
 
-### `yarn build`
+```bash
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The site will be available at [http://localhost:5173](http://localhost:5173) and will reload when you save changes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Testing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run the unit tests using Jest:
 
-### `yarn eject`
+```bash
+yarn test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Production Build
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create an optimized build in the `build/` directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+yarn build
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To preview the production build locally:
 
-## Learn More
+```bash
+yarn serve
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contact Form Function
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project includes a Cloudflare Pages Function (`functions/contact.ts`) that relays contact form submissions using Gmail. Configure these environment variables in Cloudflare (or a `.env` file for local testing):
+
+- `GMAIL_USER` – Gmail address used to send email
+- `GMAIL_PASS` – app password or OAuth token for the Gmail account
+- `PERSONAL_EMAIL` – destination address for messages (defaults to `GMAIL_USER`)
+
+## Project Structure
+
+- `src/` – React application source code
+- `public/` – static assets
+- `functions/` – Cloudflare Functions
+
+## License
+
+This project is licensed under the MIT License.
+
