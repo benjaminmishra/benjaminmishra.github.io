@@ -20,7 +20,7 @@ export default function GitHubProjects() {
       .then((data) => {
         // Filter out the personal website repository and any forks
         const filtered = data.filter((repo: Repo & { fork: boolean }) =>
-          !repo.fork && repo.topics.includes("portfolio")
+          !repo.fork && repo.topics.includes("portfolio-showcase")
         );
         setRepos(filtered.slice(0, 10));
       })
