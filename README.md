@@ -1,6 +1,6 @@
 # My Website
 
-This repository contains the source for [My](https://benjaminmishra.com)'s personal website. The app is built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS** and is deployed to Cloudflare Pages.
+This repository contains the source for my [personal website](https://benjaminmishra.com). The app is built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS** and is deployed to Cloudflare Pages.
 
 ## Prerequisites
 
