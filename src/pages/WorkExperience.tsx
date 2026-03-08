@@ -42,9 +42,7 @@ export default function WorkExperience() {
           </div>
           <div className="mx-auto max-w-4xl">
             {workExperiences.map((experience) => {
-              const summary = Array.isArray(experience.description)
-                ? experience.description[0]
-                : `${experience.description.slice(0, 140)}...`;
+              const summary = experience.description[0] ?? "";
 
               return (
                 <ExperienceEntry
