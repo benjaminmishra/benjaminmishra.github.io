@@ -30,7 +30,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Build site
         run: ./scripts/build-site.sh
@@ -69,7 +71,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Run infrastructure
         if: github.event_name == 'workflow_dispatch' && inputs.run_infra
