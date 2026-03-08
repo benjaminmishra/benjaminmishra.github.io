@@ -3,62 +3,53 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-slate-900 to-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-        {/* Two columns: fixed avatar (left) + flexible content (right) */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
-          {/* LEFT: Avatar (fixed width, never shrinks) */}
-          <div className="shrink-0">
-            <div className="w-40 h-50 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full overflow-hidden ring-1 ring-white/10 shadow-xl">
-              <img
-                src="/benjamin.png"
-                alt="Portrait of Benjamin Mishra"
-                className="w-90 h-90 object-cover object-[50%_47%]"
-              />
+    <section className="section-shell relative overflow-hidden">
+      <div className="absolute inset-x-0 top-0 -z-10 h-[36rem] bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.28),_transparent_28%),linear-gradient(135deg,_rgba(15,23,42,0.96)_0%,_rgba(12,74,110,0.92)_55%,_rgba(2,6,23,0.98)_100%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.24),_transparent_28%),linear-gradient(135deg,_rgba(2,6,23,0.98)_0%,_rgba(3,37,65,0.94)_55%,_rgba(2,6,23,1)_100%)]" />
+      <div className="site-container">
+        <div className="surface-card relative overflow-hidden border-white/10 bg-slate-950/80 px-6 py-10 text-white shadow-2xl shadow-slate-900/25 sm:px-8 lg:px-10 lg:py-14 dark:border-slate-800">
+          <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl" />
+          <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-cyan-300/10 blur-3xl" />
+          <div className="flex flex-col items-center gap-10 md:flex-row md:gap-12">
+            <div className="shrink-0">
+              <div className="h-40 w-40 overflow-hidden rounded-full ring-4 ring-white/10 shadow-xl sm:h-48 sm:w-48 md:h-72 md:w-72">
+                <img
+                  src="/benjamin.png"
+                  alt="Portrait of Benjamin Mishra"
+                  className="h-full w-full object-cover object-[50%_47%]"
+                />
+              </div>
             </div>
-          </div>
-
-          {/* RIGHT: One container controls the right edge for everything */}
-          <div className="flex-1">
-            <div className="ml-auto max-w-[700px] text-center md:text-center">
-              {/* Kicker */}
-              <div className="hidden md:flex justify-center items-center gap-2 text-sm text-gray-200/80">
-                <span className="rounded-full border border-white/10 px-3 py-1 text-sm text-gray-200/80">
+            <div className="flex-1">
+              <div className="mx-auto max-w-3xl text-center md:text-left">
+                <span className="pill border-white/15 bg-white/5 text-sky-100 dark:border-sky-400/20 dark:bg-sky-400/10 dark:text-sky-100">
                   Backend Engineering • Distributed Systems • Architecture
                 </span>
-              </div>
-
-              {/* Name */}
-              <h1 className="mt-3 md:mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                Hi, I am Benjamin
-              </h1>
-
-              {/* Value prop */}
-              <p className="mx-auto md:ml-auto max-w-[57ch] text-gray-300 text-sm sm:text-base md:text-lg mt-4">
-                I build fault-tolerant systems with predictable tail latency,
-                clean observability, and low-drama operations at scale.
-              </p>
-
-
-              {/* CTAs */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-center">
-                <Link
-                  to="/projects"
-                  className="inline-block rounded-md bg-primary px-6 py-3 text-text-dark font-medium hover:bg-primary/90 transition-colors"
-                >
-                  View My Work
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-block rounded-md border border-white/15 px-6 py-3 text-gray-200 font-medium hover:bg-white/5 transition-colors"
-                >
-                  Get In Touch
-                </Link>
+                <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
+                  Backend engineer working on reliable systems and platform delivery.
+                </h1>
+                <p className="mx-auto mt-5 max-w-[60ch] text-sm leading-7 text-slate-300 sm:text-base md:mx-0 md:text-lg">
+                  I work across backend services, distributed systems, and delivery workflows, with
+                  experience in gaming, energy, and enterprise software.
+                </p>
+                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+                  <Link
+                    to="/projects"
+                    className="inline-flex items-center justify-center rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300"
+                  >
+                    View My Work
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:bg-white/5"
+                  >
+                    Get In Touch
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

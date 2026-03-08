@@ -1,100 +1,66 @@
 import React from "react";
-import "../App.css";
 import Layout from "./Layout";
 
+const CONTACT_EMAIL = "contact@benjaminmishra.dev";
+
 export default function ContactMe() {
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault(); // Prevent default form submission
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-    const formData = new FormData(event.target as HTMLFormElement);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
 
-    try {
-      const response = await fetch('/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
+    const subject = encodeURIComponent(`Website enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    );
 
-      if (response.ok) {
-        alert('Message sent successfully!');
-      } else {
-        alert('Failed to send message.');
-      }
-    } catch (error) {
-      console.error('Error sending message:', error);
-      alert('An error occurred while sending the message.');
-    }
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   }
 
   return (
     <Layout>
-      <section className="body-font relative text-text-light dark:text-text-dark font-FigTree">
-        <div className="container mx-auto px-5 py-24">
-          <div className="mb-12 flex w-full flex-col text-center">
-            <h1 className="title-font mb-4 text-2xl font-medium text-text-light dark:text-text-dark sm:text-3xl">
-              Contact Me
-            </h1>
-            <p className="mx-auto leading-relaxed lg:w-2/3">
-              Got a question, a project idea, or just want to say hello? Feel free to reach out!
+      <section className="section-shell">
+        <div className="site-container">
+          <div className="section-header">
+            <span className="pill">Contact</span>
+            <h1 className="section-title">Start a conversation.</h1>
+            <p className="section-copy">
+              For platform work, architecture discussions, leadership roles, or consulting, send a note.
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="mx-auto md:w-2/3 lg:w-1/2">
-            <div className="-m-2 flex flex-wrap">
-              <div className="w-full p-2">
-                <div className="relative">
-                  <label htmlFor="name" className="text-sm leading-7 text-text-light dark:text-text-dark">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="Name"
-                    name="name"
-                    className="w-full rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-8 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
-                  />
-                </div>
+          <form onSubmit={handleSubmit} className="surface-card mx-auto max-w-3xl">
+            <div className="grid gap-6">
+              <div>
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+                  Name
+                </label>
+                <input id="name" type="text" name="name" className="text-input" required />
               </div>
-              <div className="w-full p-2">
-                <div className="relative">
-                  <label
-                    htmlFor="message"
-                    className="text-sm leading-7 text-text-light dark:text-text-dark"
-                  >
-                    Your Email
-                  </label>
-                  <input
-                    type="text"
-                    id="Email"
-                    name="email"
-                    className="w-full rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-8 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
-                  />
-                </div>
+              <div>
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+                  Email
+                </label>
+                <input id="email" type="email" name="email" className="text-input" required />
               </div>
-              <div className="w-full p-2">
-                <div className="relative">
-                  <label
-                    htmlFor="message"
-                    className="text-sm leading-7 text-text-light dark:text-text-dark"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="Message"
-                    className="h-32 w-full resize-none rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 px-3 py-1 text-base leading-6 text-text-light dark:text-text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary dark:focus:border-primary"
-                  ></textarea>
-                </div>
+              <div>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+                  Message
+                </label>
+                <textarea id="message" name="message" className="text-input min-h-[10rem] resize-y" required />
               </div>
-              <div className="w-full p-2">
+              <div>
+                <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
+                  This opens your default email app and drafts a message to {CONTACT_EMAIL}.
+                </p>
                 <button
                   type="submit"
-                  className="rounded border-0 bg-primary px-6 py-2 text-lg text-text-dark focus:outline-none hover:bg-primary-dark"
+                  className="inline-flex items-center justify-center rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300"
                 >
-                  Send
+                  Send message
                 </button>
               </div>
             </div>

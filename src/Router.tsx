@@ -11,6 +11,10 @@ import Projects from "./pages/Projects";
 export default function Router() {
   const router = createBrowserRouter([
     {
+      path: "/404",
+      element: <NotFound />,
+    },
+    {
       path: "/contact",
       element: <ContactMe />,
     },
@@ -34,6 +38,10 @@ export default function Router() {
     {
       path: "/article/:slug",
       element: <Article />
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     }
   ]);
 

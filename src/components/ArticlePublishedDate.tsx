@@ -8,7 +8,7 @@ export default function ArticlePublishedDate({ publishedDate }: ArticlePublished
   const formattedDate = new Date(publishedDate).toLocaleDateString();
 
   return (
-    <p className="text-sm text-text-light dark:text-text-dark opacity-75">
+    <p className="text-sm text-slate-500 dark:text-slate-400">
       Published on {formattedDate}
     </p>
   );

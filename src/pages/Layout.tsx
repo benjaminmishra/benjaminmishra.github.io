@@ -8,9 +8,9 @@ interface LayoutProps {
 
 export default function Layout({ children } : LayoutProps) {
     return (
-        <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+        <div className="site-frame flex min-h-screen flex-col">
             <Header />
-            <main className="flex-grow">
+            <main className="flex-1">
                 {children}
             </main>
             <Footer />

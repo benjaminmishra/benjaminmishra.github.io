@@ -1,9 +1,14 @@
 import React from "react";
 
 export default function BlogLandingHeader() {
-    return (
-        <h2 className="text-slate-900 font-bold font-FigTree text-4xl sm:text-5xl lg:text-6xl tracking-normal text-center dark:text-white">
-            My Thoughts
-        </h2>
-    )
+  return (
+    <div className="section-header">
+      <span className="pill">Writing</span>
+      <h1 className="section-title">Notes on engineering, architecture, and delivery.</h1>
+      <p className="section-copy">
+        Practical write-ups from the systems side of software: implementation details, trade-offs,
+        and lessons worth keeping.
+      </p>
+    </div>
+  );
 }

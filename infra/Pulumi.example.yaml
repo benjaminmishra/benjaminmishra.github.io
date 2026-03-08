@@ -1,0 +1,15 @@
+config:
+  site:provider: cloudflare
+  site:siteName: personal-website
+  site:productionBranch: main
+  site:buildCommand: yarn build
+  site:buildOutputDir: build
+  site:rootDir: /
+  site:primaryDomain: benjaminmishra.dev
+  site:additionalDomains:
+    - www.benjaminmishra.dev
+  site:contactAddress: contact@benjaminmishra.dev
+  site:mailForwardingDestination: benjaminmishra@gmail.com
+  cloudflare:accountId: REPLACE_ME
+  cloudflare:zoneId: REPLACE_ME
+  cloudflare:pagesProjectName: personal-website

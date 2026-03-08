@@ -1,57 +1,39 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Home, Briefcase, Code, BookOpen, Mail } from "lucide-react";
 
-// Responsive navigation with icon-only links on small screens and text labels on larger screens
 export default function Nav() {
+  const location = useLocation();
+  const items = [
+    { to: "/", label: "Home", icon: Home },
+    { to: "/workex", label: "Work Experience", icon: Briefcase },
+    { to: "/projects", label: "Projects", icon: Code },
+    { to: "/blog", label: "Blog", icon: BookOpen },
+    { to: "/contact", label: "Contact", icon: Mail },
+  ];
+
   return (
-    <nav aria-label="Main" className="font-FigTree text-sm w-full">
-      <ul className="flex flex-row items-center justify-between md:justify-end space-x-0 md:space-x-6 w-full">
-        <li>
-          <Link
-            to="/"
-            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
-          >
-            <Home className="w-5 h-5" />
-            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Home</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/workex"
-            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
-          >
-            <Briefcase className="w-5 h-5" />
-            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Work Experience</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/projects"
-            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
-          >
-            <Code className="w-5 h-5" />
-            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Projects</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/blog"
-            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
-          >
-            <BookOpen className="w-5 h-5" />
-            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Blog</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/contact"
-            className="flex flex-col md:flex-row items-center text-text-light dark:text-text-dark hover:text-primary"
-          >
-            <Mail className="w-5 h-5" />
-            <span className="sr-only md:not-sr-only md:ml-1 md:inline">Contact Me</span>
-          </Link>
-        </li>
+    <nav aria-label="Main" className="w-full text-sm">
+      <ul className="flex w-full items-center justify-between gap-1 sm:gap-2 md:justify-end">
+        {items.map(({ to, label, icon: Icon }) => {
+          const isActive = location.pathname === to || (to === "/blog" && location.pathname.startsWith("/article/"));
+
+          return (
+            <li key={to}>
+              <Link
+                to={to}
+                className={`flex min-w-[3.5rem] flex-col items-center rounded-2xl px-3 py-2 transition md:min-w-0 md:flex-row md:gap-2 ${
+                  isActive
+                    ? "bg-slate-900 text-white shadow-lg shadow-slate-900/10 dark:bg-sky-400 dark:text-slate-950"
+                    : "text-slate-600 hover:bg-white/70 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-slate-900/70 dark:hover:text-white"
+                }`}
+              >
+                <Icon className="h-5 w-5" />
+                <span className="sr-only md:not-sr-only">{label}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

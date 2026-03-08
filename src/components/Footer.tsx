@@ -5,33 +5,32 @@ import GithubIcon from "../assets/github.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-background-light dark:bg-background-dark font-FigTree py-6">
-      <div className="px-4 flex items-center justify-between">
-        <span className="text-sm text-text-light dark:text-text-dark">
-          © {new Date().getFullYear()}{" "}
-          <a href="https://flowbite.com/" className="hover:text-primary">Benjamin</a>. All Rights Reserved.
-        </span>
-        <div className="flex space-x-5">
+    <footer className="border-t border-slate-200/70 py-8 dark:border-slate-800">
+      <div className="site-container flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="text-sm text-slate-600 dark:text-slate-300">
+          © {new Date().getFullYear()} Benjamin Mishra. Built with React and deployed on Cloudflare.
+        </div>
+        <div className="flex items-center gap-4">
           <a
             href="https://www.twitter.com/benjaminmishra"
-            className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary"
+            className="rounded-full border border-slate-200 bg-white p-2 transition hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-sky-500/40 dark:hover:bg-slate-800"
+            aria-label="Twitter"
           >
-            <img src={TwitterIcon} alt="Twitter" className="filter dark:invert" />
-            <span className="sr-only">Twitter page</span>
+            <img src={TwitterIcon} alt="" className="h-4 w-4 filter dark:invert" />
           </a>
           <a
             href="https://www.linkedin.com/in/benjaminmishra/"
-            className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary"
+            className="rounded-full border border-slate-200 bg-white p-2 transition hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-sky-500/40 dark:hover:bg-slate-800"
+            aria-label="LinkedIn"
           >
-            <img src={LinkedInIcon} alt="LinkedIn" className="filter dark:invert" />
-            <span className="sr-only">Linkedin account</span>
+            <img src={LinkedInIcon} alt="" className="h-4 w-4 filter dark:invert" />
           </a>
           <a
             href="https://www.github.com/benjaminmishra/"
-            className="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary"
+            className="rounded-full border border-slate-200 bg-white p-2 transition hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-sky-500/40 dark:hover:bg-slate-800"
+            aria-label="GitHub"
           >
-            <img src={GithubIcon} alt="Github" className="filter dark:invert" />
-            <span className="sr-only">Github account</span>
+            <img src={GithubIcon} alt="" className="h-4 w-4 filter dark:invert" />
           </a>
         </div>
       </div>

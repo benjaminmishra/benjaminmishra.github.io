@@ -33,7 +33,7 @@ export default {
       },
 
       fontFamily: {
-        sans: ['FigTree', 'Inter', 'sans-serif'],
+        sans: ["Figtree", "Inter", "sans-serif"],
       },
 
       keyframes: {

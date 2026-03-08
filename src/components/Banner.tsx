@@ -18,7 +18,7 @@ export default function Banner() {
     if (!bannerConfig.isEnabled) return null;
 
     return (
-        <div className="narrow-banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 dark:bg-gray-800 px-4 py-0.5 w-full">
+        <div className="relative isolate flex w-full items-center gap-x-6 overflow-hidden border-b border-slate-200/70 bg-slate-50/90 px-4 py-1 text-xs text-slate-700 dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-200">
             <div
                 className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
                 aria-hidden="true">
@@ -41,13 +41,13 @@ export default function Banner() {
                 />
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <p className="flex text-sm leading-6">
+                <p className="flex items-center gap-3 leading-6">
                     <strong className="font-semibold">This site is under construction. To know more about me checkout</strong>
                     <a
                         href="https://www.linkedin.com/in/benjaminmishra/"
-                        className="flex-none rounded-full bg-gray-900 dark:bg-gray-700 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 dark:hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        className="flex-none rounded-full bg-slate-900 px-3 py-1 font-semibold text-white shadow-sm transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-white"
                     >
-                        <img src={linkedin} alt="linked in logo" className="filter dark:invert" />
+                        <img src={linkedin} alt="linked in logo" className="h-4 w-4 filter dark:invert-0" />
                     </a>
 
                 </p>

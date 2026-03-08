@@ -8,13 +8,7 @@
     },
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  "postCreateCommand": [
-    "corepack enable",
-    "yarn set version stable",
-    "yarn add -D wrangler@^4",          // pin Wrangler v4
-    "if [ -f package.json ]; then yarn install; fi",
-    "node -v && yarn -v && ./node_modules/.bin/wrangler --version || true"
-  ],
+  "postCreateCommand": "bash -lc 'corepack enable && yarn set version stable && yarn add -D wrangler@^4 && if [ -f package.json ]; then yarn install; fi && node -v && yarn -v && ./node_modules/.bin/wrangler --version || true'",
   "forwardPorts": [5173, 8788],
   "remoteUser": "vscode"
 }

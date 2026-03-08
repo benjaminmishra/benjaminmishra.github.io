@@ -6,7 +6,7 @@ interface ArticleTagProps {
 
 export default function ArticleTag ({ tag } : ArticleTagProps){
   return (
-    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-text-light dark:text-text-dark">
+    <span className="rounded-full bg-sky-500/10 px-3 py-1 text-sm font-medium text-sky-700 dark:bg-sky-500/20 dark:text-sky-200">
       {tag}
     </span>
   );

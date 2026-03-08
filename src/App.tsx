@@ -1,27 +1,22 @@
 import React, { useEffect } from "react";
-import "./App.css";
 import Router from "./Router";
 
 function App() {
   useEffect(() => {
-    // Check user's system preference for dark mode
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const applyTheme = (isDark: boolean) => {
+      document.documentElement.classList.toggle("dark", isDark);
+    };
+    const handleChange = (event: MediaQueryListEvent) => applyTheme(event.matches);
 
-    // Listen for changes in system dark mode preference
-    window.matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (e) => {
-        if (e.matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      });
+    applyTheme(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   return (
-    <div className="App min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div className="site-frame">
       <Router />
     </div>
   );
